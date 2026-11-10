@@ -29,23 +29,42 @@ int main(){
             break;
         }
         case 2:{
-            char slovo[] = "";
+            char slovo[50] = "";
+            char s_d;
             printf("--------------------sifrovac a desifrovac--------------------\n");
+            printf("chcete sifrovat nebo desifrovat (s,d) : ");
+            scanf(" %c",&s_d);
             printf("napiste slovo : ");
             scanf("%s",&slovo);
             int length = 0;
+            int length_placeholder;
     
             while (slovo[length] != '\0')
             {
                 length++;
             }
-            printf("%d",length);
+            length_placeholder = length;
+            if(s_d=='s'){
+                for(int i=0;i<length;i++){
+                    slovo[i]++;
+                    
+                    printf("%c",slovo[i]);
+                }
+                printf("\n");
+            }
+            else if(s_d=='d'){
+                for(int i=0;i<length;i++){
+                    slovo[i]--;
+                    printf("%c",slovo[i]);
+                }
+            }
         }
     }
+    return 0;
 }
 
 void generovani(int velikost, char zz, char zm, char zv, char zc){
-    int ranznaky, ranmala , ranvelka , rancisla , ranturn, ransum=0;
+    int ranznaky, ranmala , ranvelka , rancisla , ranturn;
     
     for(int i = 0;i<velikost;i++){
         int r = rand() % 2;
