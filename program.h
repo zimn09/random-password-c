@@ -2,5 +2,6 @@
 #define PROGRAM_H
 
 void generovani(int velikost, char zz, char zm, char zv, char zc);
+void kamen_nuzky_papir(char volba);
 
 #endif
